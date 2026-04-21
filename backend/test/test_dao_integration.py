@@ -2,13 +2,13 @@ import pytest
 
 def test_create_valid(dao):
     data = {
-        "name": "Alice",
+        "name": "Swaroop",
         "active": True
     }
 
     result = dao.create(data)
 
-    assert result["name"] == "Alice"
+    assert result["name"] == "Swaroop"
     assert result["active"] is True
     assert "_id" in result
 
@@ -24,7 +24,7 @@ def test_create_missing_field(dao):
 
 def test_create_wrong_type(dao):
     data = {
-        "name": "Alice",
+        "name": "Kishore",
         "active": "yes"
     }
 
