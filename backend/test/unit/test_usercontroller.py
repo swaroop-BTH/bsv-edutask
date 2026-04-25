@@ -41,12 +41,13 @@ def test_get_user_multiple_results(capsys):
 
 
 # 3. No users found (reveals bug)
-def test_get_user_no_results():
+def test_get_user_no_results_returns_none():
     dao = MockDAO(return_value=[])
     controller = UserController(dao)
 
-    with pytest.raises(IndexError):
-        controller.get_user_by_email("user@test.com")
+    result = controller.get_user_by_email("user@test.com")
+
+    assert result is None
 
 
 # 4. Invalid email
