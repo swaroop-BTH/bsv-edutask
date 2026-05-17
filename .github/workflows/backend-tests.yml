@@ -32,4 +32,4 @@ jobs:
       - name: Run backend unit tests
         working-directory: backend
         run: |
-          pytest -m unit
+          pytest 
